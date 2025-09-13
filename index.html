@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Peso - Tiendamia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>⚖️ Calculadora de Peso</h1>
+  </header>
+
+  <main>
+    <section class="calculator">
+      <!-- Países y modalidades -->
+      <div class="form-group">
+        <label for="pais">País y modalidad:</label>
+        <select id="pais">
+          <option value="" disabled selected>Seleccione un país...</option>
+          <option value="peru">Perú</option>
+          <option value="costarica">Costa Rica</option>
+          <option value="ecuador">Ecuador</option>
+          <option value="argentina_privado">Argentina - Correo Privado</option>
+          <option value="argentina_argentino">Argentina - Correo Argentino</option>
+          <option value="uruguay_franquicia">Uruguay - Franquicia</option>
+          <option value="uruguay_avion">Uruguay - Importación Avión</option>
+          <option value="uruguay_barco">Uruguay - Importación Barco</option>
+        </select>
+      </div>
+
+      <!-- Peso cobrado -->
+      <div class="form-group">
+        <label for="pesoPagado">Peso pagado (kg):</label>
+        <input 
+          type="text" 
+          id="pesoPagado" 
+          placeholder="Ej: 1.2000" 
+          maxlength="10"
+        >
+      </div>
+
+      <!-- Peso real -->
+      <div class="form-group">
+        <label for="pesoReal">Peso real (kg):</label>
+        <input 
+          type="text" 
+          id="pesoReal" 
+          placeholder="Ej: 0.6555" 
+          maxlength="10"
+        >
+      </div>
+
+      <!-- Botones -->
+      <div class="buttons">
+        <button id="calcular">Calcular</button>
+        <button id="limpiar">Limpiar</button>
+      </div>
+
+      <!-- Resultados -->
+      <div id="resultado" class="resultado">
+        <!-- Aquí se mostrarán los mensajes -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto demo – Tiendamia © 2025</p>
+  </footer>
+
+  <script src="peso.js"></script>
+</body>
+</html>
