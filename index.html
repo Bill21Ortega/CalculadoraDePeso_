@@ -1,72 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>⚖️ Calculadora de Peso</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚖️ CALCULADORA DE PESO ⚖️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Encabezado -->
   <header>
-    ⚖️ CALCULADORA DE PESO
+    ⚖️ CALCULADORA DE PESO ⚖️
   </header>
 
-  <!-- Contenedor principal -->
-  <div class="container">
-    <div class="content">
-      <h1>Calculadora de diferencia</h1>
-      <p class="helper">Ingrese los datos del envío para calcular si corresponde cobrar o reembolsar</p>
+  <main>
+    <div class="container">
+      <h1>Completa los datos</h1>
+      <p class="helper">Ingresa los valores para calcular el peso final del envío.</p>
 
-      <form id="pesoForm">
-        <!-- País y modalidad (arriba sola) -->
-        <div class="field" style="grid-column: 1 / -1;">
-          <label for="pais">País y modalidad:</label>
-          <select id="pais" required>
+      <form>
+        <!-- Línea 1 -->
+        <div class="field full-width">
+          <label for="country">País y modalidad:</label>
+          <select id="country">
             <option value="">Seleccione un país...</option>
-            <option value="peru">Perú</option>
-            <option value="costarica">Costa Rica</option>
-            <option value="ecuador">Ecuador</option>
-            <option value="argentina_privado">Argentina - Correo Privado</option>
-            <option value="argentina_argentino">Argentina - Correo Argentino</option>
-            <option value="uruguay_franquicia">Uruguay - Franquicia</option>
-            <option value="uruguay_avion">Uruguay - Importación Avión</option>
-            <option value="uruguay_barco">Uruguay - Importación Barco</option>
+            <option value="pe">Perú</option>
+            <option value="co">Colombia</option>
+            <option value="ar">Argentina</option>
           </select>
         </div>
 
-        <!-- Peso pagado y peso real en la misma fila -->
+        <!-- Línea 2 -->
         <div class="field">
-          <label for="pesoPagado">Peso pagado (kg):</label>
-          <input type="text" id="pesoPagado" placeholder="Ej: 1.2000" required/>
+          <label for="paidWeight">Peso pagado (kg):</label>
+          <input type="number" id="paidWeight" placeholder="Ej: 1.2000" step="0.0001">
         </div>
 
         <div class="field">
-          <label for="pesoReal">Peso real (kg):</label>
-          <input type="text" id="pesoReal" placeholder="Ej: 0.6555" required/>
+          <label for="realWeight">Peso real (kg):</label>
+          <input type="number" id="realWeight" placeholder="Ej: 0.6555" step="0.0001">
         </div>
 
-        <!-- Acciones -->
+        <!-- Línea 3 -->
         <div class="actions">
           <button type="submit" class="primary">Calcular</button>
           <button type="reset" class="ghost">Limpiar</button>
         </div>
-
-        <!-- Resultado -->
-        <div id="resultado" class="result"></div>
-
-        <!-- Advertencia de error -->
-        <div id="errorMsg" class="warn"></div>
       </form>
-    </div>
-  </div>
 
-  <!-- Footer -->
+      <div class="result" id="result"></div>
+      <div class="warn" id="warn"></div>
+    </div>
+  </main>
+
   <footer>
     Proyecto demo – Tiendamia © 2025
   </footer>
-
-  <!-- Script -->
-  <script src="peso.js"></script>
 </body>
 </html>

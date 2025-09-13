@@ -25,17 +25,13 @@ header {
 }
 
 .container {
-  max-width: 450px;
+  max-width: 600px;
   background: var(--card);
   border-radius: 14px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-  margin: auto;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+  margin: 60px auto; /* más espacio arriba y abajo */
   padding: 30px;
   text-align: center;
-}
-
-.content {
-  padding: 0;
 }
 
 h1 {
@@ -53,25 +49,29 @@ p.helper {
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px; /* más espacio entre inputs */
+  align-items: end; /* alinea bien las cajas */
 }
 
 .field {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-align: left;
+}
+
+.full-width {
+  grid-column: 1 / -1;
 }
 
 label {
   font-weight: 600;
   color: #333;
   font-size: 14px;
-  text-align: left;
 }
 
 select,
-input[type="number"],
-input[type="text"] {
+input[type="number"] {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -79,6 +79,7 @@ input[type="text"] {
   border-radius: 10px;
   padding: 12px 12px;
   font-size: 15px;
+  box-sizing: border-box; /* asegura que no se solapen */
 }
 
 .actions {
@@ -97,7 +98,7 @@ button.primary {
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.15s transform ease;
+  transition: .15s transform ease;
   text-transform: uppercase;
 }
 
@@ -118,7 +119,7 @@ button.ghost {
 
 .result {
   grid-column: 1 / -1;
-  margin-top: 12px;
+  margin-top: 4px;
   padding: 14px;
   border-radius: 10px;
   border: 1px solid #e0f0e6;
@@ -129,7 +130,7 @@ button.ghost {
 
 .warn {
   grid-column: 1 / -1;
-  margin-top: 12px;
+  margin-top: 4px;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #f2d7d5;
@@ -145,31 +146,8 @@ footer {
   padding: 20px 0 30px;
 }
 
-.logo-brand {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 120px;
-  opacity: 0.9;
-}
-
 @media (max-width: 640px) {
   form {
     grid-template-columns: 1fr;
-  }
-}
-
-.logo-top {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  height: 40px;
-  z-index: 10;
-}
-
-@media (max-width: 640px) {
-  .logo-top,
-  .logo-bottom {
-    display: none;
   }
 }
