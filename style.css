@@ -1,0 +1,175 @@
+:root {
+  --brand: #e30613;
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #222;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--brand);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+.container {
+  max-width: 450px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.content {
+  padding: 0;
+}
+
+h1 {
+  margin: 0 0 15px;
+  font-size: 22px;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+p.helper {
+  margin: 0 0 18px;
+  color: #555;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  text-align: left;
+}
+
+select,
+input[type="number"],
+input[type="text"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 12px;
+  font-size: 15px;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button.primary {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.15s transform ease;
+  text-transform: uppercase;
+}
+
+button.primary:hover {
+  transform: translateY(-1px);
+}
+
+button.ghost {
+  background: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.result {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #e0f0e6;
+  background: #f4fbf7;
+  color: #185a37;
+  display: none;
+}
+
+.warn {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #f2d7d5;
+  background: #fdf2f1;
+  color: #7a2629;
+  display: none;
+}
+
+footer {
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  padding: 20px 0 30px;
+}
+
+.logo-brand {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 120px;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.logo-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 40px;
+  z-index: 10;
+}
+
+@media (max-width: 640px) {
+  .logo-top,
+  .logo-bottom {
+    display: none;
+  }
+}
