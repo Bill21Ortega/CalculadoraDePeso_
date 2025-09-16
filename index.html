@@ -5,19 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#e30613" />
   <title>⚖️ CALCULADORA DE PESO ⚖️</title>
+  <!-- Estilos principales -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Logo superior -->
   <img src="logo-tm-white.webp" alt="Logo Tiendamia" class="logo-top">
+
+  <!-- Encabezado -->
   <header>⚖️ CALCULADORA DE PESO ⚖️</header>
 
+  <!-- Contenido principal -->
   <main class="container" role="main">
     <div class="content">
       <h1>Completa los datos</h1>
-      <p class="helper">Calcula la diferencia de peso entre lo <strong>pagado</strong> y el <strong>peso real</strong> del producto, según el país y modalidad seleccionados.</p>
+      <p class="helper">
+        Calcula la diferencia de peso entre lo <strong>pagado</strong> y el <strong>peso real</strong> 
+        del producto, según el país y modalidad seleccionados.
+      </p>
 
+      <!-- Formulario principal -->
       <form id="calcForm" novalidate>
-        <!-- País y modalidad -->
+        <!-- Selector de país y modalidad -->
         <div class="field">
           <label for="pais">País y modalidad</label>
           <select id="pais" required>
@@ -28,12 +37,12 @@
             <option value="argentina_privado">Argentina - Correo Privado</option>
             <option value="argentina_arg">Argentina - Correo Argentino</option>
             <option value="uruguay_franquicia">Uruguay - Franquicia</option>
-            <option value="uruguay_avion">Uruguay - Importación Avión</option>
-            <option value="uruguay_barco">Uruguay - Barco</option>
+            <option value="uruguay_importacion">Uruguay - Importación</option>
+            <option value="uruguay_china">Uruguay - China</option>
           </select>
         </div>
 
-        <!-- Pesos (fila) -->
+        <!-- Campos de entrada: peso pagado y peso real -->
         <div class="field-group">
           <div class="field">
             <label for="pesoPagado">PESO PAGADO (kg)</label>
@@ -45,26 +54,28 @@
           </div>
         </div>
 
-        <!-- Botones -->
+        <!-- Botones de acción -->
         <div class="actions">
           <button type="button" id="calcular" class="primary">CALCULAR</button>
           <button type="button" id="limpiar" class="ghost">Limpiar</button>
         </div>
 
-        <!-- Mensajes -->
+        <!-- Mensajes dinámicos -->
         <div id="warn" class="warn" role="alert"></div>
         <div id="resultado" class="result"></div>
       </form>
     </div>
   </main>
 
-   <footer>
+  <!-- Pie de página -->
+  <footer>
     Demo de calculadora de peso para Tiendamia
   </footer>
 
-  <!-- 🔥 Logo inferior izquierdo -->
+  <!-- Logo inferior -->
   <img src="TiendamiaLogo.png" alt="Logo Tiendamia" class="logo-brand">
 
+  <!-- Script principal con la lógica -->
   <script src="peso.js"></script>
 </body>
 </html>
